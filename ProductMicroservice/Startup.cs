@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProductMicroservice.AsyncDataService;
+using ProductMicroservice.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +30,11 @@ namespace ProductMicroservice
         {
 
             services.AddControllers();
+            services.AddDbContextPool<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ProductsConn")));
+            services.AddTransient<IProductRepo, ProductRepo>();
+            services.AddSingleton<IMessageBusClient, MessageBusClient>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProductMicroservice", Version = "v1" });
@@ -42,7 +50,10 @@ namespace ProductMicroservice
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductMicroservice v1"));
             }
-
+            app.UseCors(options =>
+           options.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
             app.UseRouting();
 
             app.UseAuthorization();
@@ -51,6 +62,7 @@ namespace ProductMicroservice
             {
                 endpoints.MapControllers();
             });
+            PrepDb.PrepPopulation(app, env.IsProduction());
         }
     }
 }
