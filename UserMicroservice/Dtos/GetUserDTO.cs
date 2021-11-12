@@ -7,6 +7,8 @@ namespace UserMicroservice.Dtos
 {
     public class GetUserDTO
     {
+        public int UserID { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

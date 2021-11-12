@@ -1,0 +1,80 @@
+2021-10-14 23:26:51.374 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-14 23:26:51.642 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-14 23:26:51.665 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-14 23:26:51.669 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-14 23:26:51.670 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-14 23:26:51.684 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-14 23:26:51.694 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-14 23:26:51.716 +02:00 [INF] Now listening on: http://localhost:5010
+2021-10-14 23:26:51.716 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-14 23:26:51.716 +02:00 [INF] Hosting environment: Development
+2021-10-14 23:26:51.716 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\ShippingMicroservice
+2021-10-14 23:29:02.200 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5010/api/Shipping - -
+2021-10-14 23:29:02.214 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:29:02.216 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5010/api/Shipping - - - 204 - - 17.4784ms
+2021-10-14 23:29:02.353 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Shipping application/json 219
+2021-10-14 23:29:02.354 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:29:02.371 +02:00 [INF] Executing endpoint 'ShippingMicroservice.Controllers.ShippingController.Post (ShippingMicroservice)'
+2021-10-14 23:29:02.387 +02:00 [INF] Route matched with {action = "Post", controller = "Shipping"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(ShippingMicroservice.Dtos.CreateShippingDetailsDto) on controller ShippingMicroservice.Controllers.ShippingController (ShippingMicroservice).
+2021-10-14 23:29:02.401 +02:00 [INF] ShippingController-->Calling Post method for shipping details
+2021-10-14 23:29:02.402 +02:00 [INF] ShippingRepo-->Calling metod for creating shipping details from repo
+2021-10-14 23:29:02.592 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[@__creditCard_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CCV], [c].[CardHolder], [c].[CardNumber], [c].[ExpirationDateMonth], [c].[ExpirationDateYear], [c].[UserId]
+FROM [CreditCard] AS [c]
+WHERE [c].[UserId] = @__creditCard_UserId_0
+2021-10-14 23:29:02.626 +02:00 [INF] ShippingRepo-->Existing card was already in database
+2021-10-14 23:29:02.720 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Double), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ShippingDetails] ([Address], [CreditCardId], [FirstName], [LastName], [TotalSum], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [ShippingDetails]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-14 23:29:02.751 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2021-10-14 23:29:02.758 +02:00 [INF] Executed action ShippingMicroservice.Controllers.ShippingController.Post (ShippingMicroservice) in 368.4657ms
+2021-10-14 23:29:02.758 +02:00 [INF] Executed endpoint 'ShippingMicroservice.Controllers.ShippingController.Post (ShippingMicroservice)'
+2021-10-14 23:29:02.762 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Shipping application/json 219 - 200 - application/json;+charset=utf-8 409.0853ms
+2021-10-16 09:59:52.108 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-16 09:59:52.375 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 09:59:52.396 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 09:59:52.399 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 09:59:52.400 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 09:59:52.415 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-16 09:59:52.425 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-16 09:59:52.447 +02:00 [INF] Now listening on: http://localhost:5010
+2021-10-16 09:59:52.447 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-16 09:59:52.447 +02:00 [INF] Hosting environment: Development
+2021-10-16 09:59:52.447 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\ShippingMicroservice
+2021-10-16 11:39:56.128 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-16 11:39:56.417 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 11:39:56.440 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 11:39:56.443 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 11:39:56.445 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 11:39:56.458 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-16 11:39:56.468 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-16 11:39:56.491 +02:00 [INF] Now listening on: http://localhost:5010
+2021-10-16 11:39:56.491 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-16 11:39:56.491 +02:00 [INF] Hosting environment: Development
+2021-10-16 11:39:56.491 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\ShippingMicroservice
+2021-10-16 17:09:28.394 +02:00 [INF] Application is shutting down...

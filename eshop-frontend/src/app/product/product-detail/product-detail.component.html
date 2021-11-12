@@ -1,0 +1,43 @@
+<main class="container">
+ 
+    
+    <div class="left-column">
+      <img data-image="red" class="active" [src]="productPictureUrl" alt="">
+    </div>
+   
+   
+  
+    <div class="right-column">
+   
+
+      <div class="product-description">
+        <span>{{product.collection}} collection</span>
+        <h1>{{product.clothingType}}</h1>
+        <p>{{product.description}}</p>
+      </div>
+
+      <div class="product-configuration">
+   
+
+   
+      
+        <div class="cable-config">
+          <span class="mb-3">Select size</span>
+   
+          <div class="cable-choose mt-3">
+            <button class="mr-1">S</button>
+            <button>M</button>
+            <button class="ml-1">L</button>
+          </div>
+   
+          
+        </div>
+      </div>
+   
+     
+      <div class="product-price">
+        <span>{{product.price}}$</span>
+        <a href="#" class="cart-btn">Add to cart</a>
+      </div>
+    </div>
+  </main>

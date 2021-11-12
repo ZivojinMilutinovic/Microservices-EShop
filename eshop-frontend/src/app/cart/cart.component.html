@@ -1,0 +1,69 @@
+
+
+
+<header id="site-header">
+    <div class="container">
+        <h1>Shopping cart </h1>
+    </div>
+</header>
+<div *ngIf="!shoppingCardEmpty && shoppingCart.products && shoppingCart.products.length>0">
+<div class="container">
+
+    <section id="cart"> 
+
+        <article *ngFor="let product of shoppingCart.products" class="product">
+            <header>
+                <a class="remove">
+                    <img [src]="imageUrls.get(product.originalProductId)" alt="">
+
+                    <h3 (click)="removeProduct(product)">Remove product</h3>
+                </a>
+            </header>
+
+            <div class="content">
+
+                <h1>{{product.clothingType}}</h1>
+
+                {{product.description}}
+            </div>
+
+            <footer class="content">
+                <span (click)="minusSpanCount(product)" class="qt-minus">-</span>
+                <span #spanCount class="qt">{{product.numberOfItems}}</span>
+                <span (click)="plusSpanCount(product)" class="qt-plus">+</span>
+
+                <h2 class="full-price">
+                    {{fullPrice(product.price,spanCount)}}$
+                </h2>
+
+                <h2 class="price">
+                    {{product.price}}$
+                </h2>
+            </footer>
+        </article>
+
+      
+    </section>
+
+</div>
+
+<footer id="site-footer">
+    <div class="container clearfix">
+
+        <div class="left">
+            <h2 class="subtotal">Subtotal: <span>{{totalProductsSum}}</span>$</h2>
+            <h3 class="tax">Taxes ({{taxes}}%): <span>{{totalProductsSum*taxes/100}}</span>$</h3>
+            <h3 class="shipping">Shipping: <span>{{totalShipping}}</span>$</h3>
+        </div>
+
+        <div class="right">
+            <h1 class="total">Total: <span>{{totalProductsSum+totalShipping+(totalProductsSum*taxes/100)}}</span>$</h1>
+            <button (click)="goToCheckout()" class="btn">Checkout</button>
+        </div>
+
+    </div>
+</footer>
+</div>
+<div *ngIf="shoppingCardEmpty">
+<h1 class="ml-5">There are no items in a cart!</h1>
+</div>

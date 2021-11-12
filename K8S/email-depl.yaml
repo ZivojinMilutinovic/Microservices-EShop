@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emailmicroservice
+  template:
+    metadata:
+      labels:
+        app: emailmicroservice
+    spec:
+      containers:
+        - name: emailmicroservice
+          image: zivojinmilutinovic1998/emailmicroservice
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: email-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: emailmicroservice
+  ports:
+  - name: emailmicroservice
+    protocol: TCP
+    port: 80
+    targetPort: 80

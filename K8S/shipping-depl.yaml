@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shippingmicroservice
+  template:
+    metadata:
+      labels:
+        app: shippingmicroservice
+    spec:
+      containers:
+        - name: shippingmicroservice
+          image: zivojinmilutinovic1998/shippingmicroservice
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: shippingmicroservice
+  ports:
+  - name: shippingmicroservice
+    protocol: TCP
+    port: 80
+    targetPort: 80

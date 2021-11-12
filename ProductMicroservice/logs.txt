@@ -1,0 +1,416 @@
+2021-10-14 21:21:06.728 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-14 21:21:07.159 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-14 21:21:07.200 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-14 21:21:07.205 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-14 21:21:07.207 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-14 21:21:07.232 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-14 21:21:07.244 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-14 21:21:07.456 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Products] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2021-10-14 21:21:07.484 +02:00 [INF] Now listening on: http://localhost:5011
+2021-10-14 21:21:07.484 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-14 21:21:07.484 +02:00 [INF] Hosting environment: Development
+2021-10-14 21:21:07.485 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\ProductMicroservice
+2021-10-14 21:21:10.852 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 21:21:10.874 +02:00 [INF] CORS policy execution successful.
+2021-10-14 21:21:10.899 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 21:21:10.913 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 21:21:11.076 +02:00 [INF] MeesageBusClient-->Starting creation of message bus client
+2021-10-14 21:21:11.142 +02:00 [INF] MeesageBusClient-->Connected to RabbitMQ
+2021-10-14 21:21:11.144 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 21:21:11.203 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 21:21:11.265 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 21:21:11.289 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 21:21:11.314 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 396.7244ms
+2021-10-14 21:21:11.314 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 21:21:11.320 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 469.6480ms
+2021-10-14 21:21:16.937 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/Product/25 - -
+2021-10-14 21:21:16.938 +02:00 [INF] CORS policy execution successful.
+2021-10-14 21:21:16.938 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/Product/25 - - - 204 - - 1.1225ms
+2021-10-14 21:21:16.977 +02:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5011/api/Product/25 - -
+2021-10-14 21:21:16.979 +02:00 [INF] CORS policy execution successful.
+2021-10-14 21:21:16.979 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.Delete (ProductMicroservice)'
+2021-10-14 21:21:16.988 +02:00 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 21:21:16.995 +02:00 [INF] ProductController-->Delete method called
+2021-10-14 21:21:16.995 +02:00 [INF] ProductRepo-->DeleteProduct method called
+2021-10-14 21:21:17.038 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__productId_0
+2021-10-14 21:21:17.103 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Products]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2021-10-14 21:21:17.126 +02:00 [INF] ProductRepo-->Changes were saved to database
+2021-10-14 21:21:17.126 +02:00 [INF] ProductController-->Product was updated successfully
+2021-10-14 21:21:17.129 +02:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-10-14 21:21:17.129 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.Delete (ProductMicroservice) in 140.5405ms
+2021-10-14 21:21:17.129 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.Delete (ProductMicroservice)'
+2021-10-14 21:21:17.130 +02:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5011/api/Product/25 - - - 200 0 - 152.5178ms
+2021-10-14 21:21:17.548 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 21:21:17.548 +02:00 [INF] CORS policy execution successful.
+2021-10-14 21:21:17.548 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 21:21:17.548 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 21:21:17.549 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 21:21:17.552 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 21:21:17.552 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 21:21:17.553 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 21:21:17.553 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 4.9632ms
+2021-10-14 21:21:17.553 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 21:21:17.554 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 5.7122ms
+2021-10-14 21:21:31.267 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/Product - -
+2021-10-14 21:21:31.267 +02:00 [INF] CORS policy execution successful.
+2021-10-14 21:21:31.267 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/Product - - - 204 - - 0.3330ms
+2021-10-14 21:21:31.269 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5011/api/Product application/json 99
+2021-10-14 21:21:31.269 +02:00 [INF] CORS policy execution successful.
+2021-10-14 21:21:31.270 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.Post (ProductMicroservice)'
+2021-10-14 21:21:31.273 +02:00 [INF] Route matched with {action = "Post", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(ProductMicroservice.Dtos.PostProductDto) on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 21:21:31.282 +02:00 [INF] ProductController-->Calling Post method
+2021-10-14 21:21:31.282 +02:00 [INF] ProductRepo-->AddProduct method called
+2021-10-14 21:21:31.314 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Double), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Products] ([ClothingType], [Collection], [Description], [Price], [ProductNumber])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-14 21:21:31.334 +02:00 [INF] ProductRepo-->Product was saved successfully
+2021-10-14 21:21:31.340 +02:00 [INF] MeesageBusClient-->RabbitMQ Connection is open
+2021-10-14 21:21:31.342 +02:00 [INF] MeesageBusClient-->We have sent ${"Id":26,"ProductNumber":"578","Price":23,"Description":"asdasdad","Collection":"Men","ClothingType":"Bra","Event":"ProductCreated"}
+2021-10-14 21:21:31.342 +02:00 [INF] ProductController-->Product was successuly created
+2021-10-14 21:21:31.343 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'ProductMicroservice.Models.Product'.
+2021-10-14 21:21:31.363 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.Post (ProductMicroservice) in 89.864ms
+2021-10-14 21:21:31.363 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.Post (ProductMicroservice)'
+2021-10-14 21:21:31.363 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5011/api/Product application/json 99 - 201 - application/json;+charset=utf-8 93.8458ms
+2021-10-14 21:21:32.139 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 21:21:32.139 +02:00 [INF] CORS policy execution successful.
+2021-10-14 21:21:32.139 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 21:21:32.139 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 21:21:32.139 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 21:21:32.142 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 21:21:32.142 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 21:21:32.143 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 21:21:32.143 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 3.6687ms
+2021-10-14 21:21:32.143 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 21:21:32.143 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 4.2840ms
+2021-10-14 23:27:06.333 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:27:06.344 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:27:06.346 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:06.350 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:27:06.354 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:27:06.486 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:27:06.489 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:27:06.491 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:27:06.493 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 142.2085ms
+2021-10-14 23:27:06.493 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:06.493 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 162.8140ms
+2021-10-14 23:27:11.668 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:27:11.669 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:27:11.669 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:11.669 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:27:11.669 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:27:11.672 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:27:11.673 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:27:11.673 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:27:11.673 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 4.0276ms
+2021-10-14 23:27:11.673 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:11.674 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 5.6515ms
+2021-10-14 23:27:19.857 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:27:19.857 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:27:19.857 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:19.858 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:27:19.858 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:27:19.860 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:27:19.861 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:27:19.861 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:27:19.861 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 3.4541ms
+2021-10-14 23:27:19.861 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:19.861 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 4.2409ms
+2021-10-14 23:27:22.189 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:27:22.189 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:27:22.189 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:22.190 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:27:22.191 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:27:22.193 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:27:22.193 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:27:22.193 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:27:22.193 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 2.9185ms
+2021-10-14 23:27:22.194 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:27:22.194 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 5.1052ms
+2021-10-14 23:28:10.670 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:28:10.670 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:28:10.670 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:10.670 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:28:10.670 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:28:10.674 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:28:10.675 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:28:10.675 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:28:10.675 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 5.1373ms
+2021-10-14 23:28:10.675 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:10.676 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 5.7890ms
+2021-10-14 23:28:17.403 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:28:17.404 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:28:17.404 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:17.405 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:28:17.405 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:28:17.407 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:28:17.408 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:28:17.409 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:28:17.410 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 5.0811ms
+2021-10-14 23:28:17.410 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:17.410 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 7.0300ms
+2021-10-14 23:28:22.943 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:28:22.943 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:28:22.943 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:22.943 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:28:22.944 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:28:22.952 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:28:22.953 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:28:22.953 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:28:22.954 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 10.0409ms
+2021-10-14 23:28:22.954 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:22.954 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 10.5279ms
+2021-10-14 23:28:30.524 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:28:30.524 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:28:30.524 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:30.525 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:28:30.525 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:28:30.528 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:28:30.528 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:28:30.528 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:28:30.528 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 3.6741ms
+2021-10-14 23:28:30.528 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:30.528 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 4.2382ms
+2021-10-14 23:28:34.546 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:28:34.546 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:28:34.547 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:34.547 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:28:34.547 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:28:34.549 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:28:34.549 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:28:34.549 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:28:34.549 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 2.6995ms
+2021-10-14 23:28:34.549 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:28:34.549 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 3.1487ms
+2021-10-14 23:29:02.823 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:29:02.823 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:29:02.823 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:29:02.824 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:29:02.824 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:29:02.826 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:29:02.827 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:29:02.827 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:29:02.827 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 3.3787ms
+2021-10-14 23:29:02.827 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:29:02.827 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 4.1243ms
+2021-10-14 23:29:05.244 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-14 23:29:05.244 +02:00 [INF] CORS policy execution successful.
+2021-10-14 23:29:05.244 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:29:05.244 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-14 23:29:05.244 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-14 23:29:05.247 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-14 23:29:05.247 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-14 23:29:05.247 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-14 23:29:05.248 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 3.7302ms
+2021-10-14 23:29:05.248 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-14 23:29:05.249 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 4.6619ms
+2021-10-16 01:47:56.481 +02:00 [INF] MeesageBusClient-->RabbitMQ Connection Shutdown
+2021-10-16 02:22:50.262 +02:00 [INF] MeesageBusClient-->RabbitMQ Connection Shutdown
+2021-10-16 09:59:21.831 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-16 09:59:22.128 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 09:59:22.149 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 09:59:22.153 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 09:59:22.154 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 09:59:22.171 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-16 09:59:22.182 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-16 09:59:22.318 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Products] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2021-10-16 09:59:22.347 +02:00 [INF] Now listening on: http://localhost:5011
+2021-10-16 09:59:22.347 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-16 09:59:22.347 +02:00 [INF] Hosting environment: Development
+2021-10-16 09:59:22.347 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\ProductMicroservice
+2021-10-16 11:39:37.451 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-16 11:39:37.778 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 11:39:37.802 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 11:39:37.805 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 11:39:37.807 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 11:39:37.822 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-16 11:39:37.832 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-16 11:39:37.952 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Products] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2021-10-16 11:39:37.983 +02:00 [INF] Now listening on: http://localhost:5011
+2021-10-16 11:39:37.983 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-16 11:39:37.983 +02:00 [INF] Hosting environment: Development
+2021-10-16 11:39:37.983 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\ProductMicroservice
+2021-10-16 11:40:22.216 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-16 11:40:22.251 +02:00 [INF] CORS policy execution successful.
+2021-10-16 11:40:22.293 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 11:40:22.319 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-16 11:40:22.571 +02:00 [INF] MeesageBusClientProduct-->Starting creation of message bus client
+2021-10-16 11:40:22.664 +02:00 [INF] MeesageBusClientProduct-->Connected to RabbitMQ
+2021-10-16 11:40:22.666 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-16 11:40:22.759 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-16 11:40:22.860 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-16 11:40:22.907 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-16 11:40:22.966 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 638.8277ms
+2021-10-16 11:40:22.968 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 11:40:22.977 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 765.1202ms
+2021-10-16 11:58:57.747 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-16 11:58:57.765 +02:00 [INF] CORS policy execution successful.
+2021-10-16 11:58:57.773 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 11:58:57.788 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-16 11:58:57.799 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-16 11:58:57.968 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-16 11:58:57.977 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-16 11:58:57.984 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-16 11:58:57.995 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 206.6834ms
+2021-10-16 11:58:57.995 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 11:58:57.997 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 255.0426ms
+2021-10-16 14:29:06.961 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-16 14:29:06.988 +02:00 [INF] CORS policy execution successful.
+2021-10-16 14:29:06.992 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 14:29:07.002 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-16 14:29:07.009 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-16 14:29:07.136 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-16 14:29:07.143 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-16 14:29:07.146 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-16 14:29:07.149 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 146.2922ms
+2021-10-16 14:29:07.149 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 14:29:07.150 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 194.8635ms
+2021-10-16 14:29:37.389 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5011/api/Product - -
+2021-10-16 14:29:37.390 +02:00 [INF] CORS policy execution successful.
+2021-10-16 14:29:37.395 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5011/api/Product - - - 204 - - 6.0226ms
+2021-10-16 14:29:37.426 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5011/api/Product application/json 104
+2021-10-16 14:29:37.427 +02:00 [INF] CORS policy execution successful.
+2021-10-16 14:29:37.427 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.Post (ProductMicroservice)'
+2021-10-16 14:29:37.466 +02:00 [INF] Route matched with {action = "Post", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(ProductMicroservice.Dtos.PostProductDto) on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-16 14:29:37.513 +02:00 [INF] ProductController-->Calling Post method
+2021-10-16 14:29:37.514 +02:00 [INF] ProductRepo-->AddProduct method called
+2021-10-16 14:29:37.672 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Double), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Products] ([ClothingType], [Collection], [Description], [Price], [ProductNumber])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-16 14:29:37.701 +02:00 [INF] ProductRepo-->Product was saved successfully
+2021-10-16 14:29:37.707 +02:00 [INF] MeesageBusClientProduct-->RabbitMQ Connection is open
+2021-10-16 14:29:37.711 +02:00 [INF] MeesageBusClientProduct-->We have sent ${"Id":27,"ProductNumber":"1234","Price":5421,"Description":"dasdasd","Collection":"Men","ClothingType":"Shorts","Event":"ProductCreated"}
+2021-10-16 14:29:37.711 +02:00 [INF] ProductController-->Product was successuly created
+2021-10-16 14:29:37.712 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'ProductMicroservice.Models.Product'.
+2021-10-16 14:29:37.739 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.Post (ProductMicroservice) in 272.6315ms
+2021-10-16 14:29:37.739 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.Post (ProductMicroservice)'
+2021-10-16 14:29:37.739 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5011/api/Product application/json 104 - 201 - application/json;+charset=utf-8 312.4169ms
+2021-10-16 14:29:40.991 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-16 14:29:40.991 +02:00 [INF] CORS policy execution successful.
+2021-10-16 14:29:40.991 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 14:29:40.991 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-16 14:29:40.991 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-16 14:29:40.994 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-16 14:29:40.994 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-16 14:29:40.995 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-16 14:29:40.995 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 3.2823ms
+2021-10-16 14:29:40.995 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 14:29:40.995 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 3.8219ms
+2021-10-16 14:29:45.876 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product/27 - -
+2021-10-16 14:29:45.876 +02:00 [INF] CORS policy execution successful.
+2021-10-16 14:29:45.877 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.Get (ProductMicroservice)'
+2021-10-16 14:29:45.881 +02:00 [INF] Route matched with {action = "Get", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-16 14:29:45.883 +02:00 [INF] ProductController-->Getting a product by id
+2021-10-16 14:29:45.920 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__productId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__productId_0
+2021-10-16 14:29:45.920 +02:00 [INF] ProductRepo-->Returning product by id
+2021-10-16 14:29:45.922 +02:00 [INF] ProductController-->Returning a product
+2021-10-16 14:29:45.923 +02:00 [INF] Executing OkObjectResult, writing value of type 'ProductMicroservice.Dtos.GetProductDto'.
+2021-10-16 14:29:45.923 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.Get (ProductMicroservice) in 41.3922ms
+2021-10-16 14:29:45.923 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.Get (ProductMicroservice)'
+2021-10-16 14:29:45.923 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product/27 - - - 200 - application/json;+charset=utf-8 47.1015ms
+2021-10-16 14:29:55.836 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5011/api/Product - -
+2021-10-16 14:29:55.836 +02:00 [INF] CORS policy execution successful.
+2021-10-16 14:29:55.836 +02:00 [INF] Executing endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 14:29:55.836 +02:00 [INF] Route matched with {action = "GetProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProducts() on controller ProductMicroservice.Controllers.ProductController (ProductMicroservice).
+2021-10-16 14:29:55.836 +02:00 [INF] ProductController-->GetProducts method called
+2021-10-16 14:29:55.839 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ClothingType], [p].[Collection], [p].[Description], [p].[Price], [p].[ProductNumber]
+FROM [Products] AS [p]
+2021-10-16 14:29:55.839 +02:00 [INF] ProductRepo-->Returning list of products
+2021-10-16 14:29:55.839 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProductMicroservice.Dtos.GetProductDto, ProductMicroservice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-10-16 14:29:55.840 +02:00 [INF] Executed action ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice) in 3.1889ms
+2021-10-16 14:29:55.840 +02:00 [INF] Executed endpoint 'ProductMicroservice.Controllers.ProductController.GetProducts (ProductMicroservice)'
+2021-10-16 14:29:55.840 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5011/api/Product - - - 200 - application/json;+charset=utf-8 4.0904ms
+2021-10-16 14:37:09.445 +02:00 [INF] Application is shutting down...

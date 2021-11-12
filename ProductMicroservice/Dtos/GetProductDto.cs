@@ -7,6 +7,8 @@ namespace ProductMicroservice.Dtos
 {
     public class GetProductDto
     {
+        public int Id { get; set; }
+
         public string ProductNumber { get; set; }
 
         public double Price { get; set; }
@@ -16,5 +18,6 @@ namespace ProductMicroservice.Dtos
         public string Collection { get; set; }
 
         public string ClothingType { get; set; }
+
     }
 }

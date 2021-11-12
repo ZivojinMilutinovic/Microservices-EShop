@@ -12,6 +12,19 @@ import { LoginComponent } from './users/login/login.component';
 import { SignupComponent } from './users/signup/signup.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductIndexComponent } from './product/product-index/product-index.component';
+import { PaginationComponent } from './home/pagination/pagination.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductUpdateComponent } from './product/product-update/product-update.component';
+import { UploadComponent } from './home/upload/upload.component';
+import { UsersIndexComponent } from './users/users-index/users-index.component';
+import { UsersCreateComponent } from './users/users-create/users-create.component';
+import { UsersUpdateComponent } from './users/users-update/users-update.component';
+import { ShopComponent } from './shop/shop.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +35,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     FooterComponent,
     PartnerLogoComponent,
-    IndexComponent
+    IndexComponent,
+    ProductCreateComponent,
+    ProductIndexComponent,
+    PaginationComponent,
+    ProductDetailComponent,
+    ProductUpdateComponent,
+    UploadComponent,
+    UsersIndexComponent,
+    UsersCreateComponent,
+    UsersUpdateComponent,
+    ShopComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,

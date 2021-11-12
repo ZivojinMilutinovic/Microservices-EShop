@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UserMicroservice.AsyncDataService;
 using UserMicroservice.Data;
 using UserMicroservice.Helpers;
 
@@ -41,7 +42,8 @@ namespace UserMicroservice
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContextPool<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("UsersConn")));
-
+  
+            services.AddSingleton<IMessageBusClient, MessageBusClientUser>();
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
 
@@ -104,6 +106,7 @@ namespace UserMicroservice
             {
                 endpoints.MapControllers();
             });
+            Console.WriteLine("Is prodction" + env.IsProduction());
             PrepDb.PrepPopulation(app, env.IsProduction());
         }
     }

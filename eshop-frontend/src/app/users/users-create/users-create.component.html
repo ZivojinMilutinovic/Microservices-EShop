@@ -1,0 +1,52 @@
+
+
+<div class="container">
+    <h1 class="text-center mt-2">Create user</h1>
+    <form class="mb-5 mt-2" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="form-group col">
+          <label for="firstName">First name</label>
+          <input formControlName="firstName" type="email" class="form-control" id="firstName"  >
+        </div>
+        <div class="form-group col">
+          <label for="lastName">Last Name</label>
+          <input formControlName="lastName"  class="form-control" id="lastName">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="form-group col">
+          <label for="address">Address</label>
+          <input formControlName="address"  class="form-control" id="address">
+        </div>
+        <div class="form-group col">
+            <label for="username">Username</label>
+            <input formControlName="username"  class="form-control" id="username">
+          </div>
+  
+      </div>
+  
+      <div class="row">
+       
+        <div class="form-group col">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password"  class="form-control" id="password" >
+        </div>
+        <div class="form-group col">
+            <label for="email">Email</label>
+            <input type="email"
+             formControlName="email"  class="form-control" id="email">
+          </div>
+      </div>
+  
+      
+  
+      <button type="submit" class="  btn btn-primary">Submit</button>
+      <div *ngIf="errorMessage" class="text-danger mt-2 mb-2">{{errorMessage}}</div>
+    </form>
+  
+  
+  </div>
+  
+  
+  

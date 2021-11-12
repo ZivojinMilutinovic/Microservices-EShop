@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  usersUrl:"http://localhost:5000/api/Users"
+  usersUrl:"http://webshop.com/api/users",
+  productsUrl:"http://webshop.com/api/product",
+  shoppingCartUrl:"http://webshop.com/api/shoppingcart",
+  shippingUrl:"http://webshop.com/api/shipping",
+  productsImagesUrl:"http://webshop.com/api/amazons3"
 };
 
 /*

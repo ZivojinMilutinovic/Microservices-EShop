@@ -15,6 +15,7 @@ namespace UserMicroservice.Profiles
             CreateMap<CreateUserDTO, User>().ReverseMap();
             CreateMap<UpdateUserDTO, User>().ReverseMap();
             CreateMap<User, GetUserDTO>().ReverseMap();
+            CreateMap<User, UserPublishedDto>().ReverseMap();
         }
     }
 }

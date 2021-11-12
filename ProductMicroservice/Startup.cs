@@ -32,7 +32,7 @@ namespace ProductMicroservice
             services.AddControllers();
             services.AddDbContextPool<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ProductsConn")));
             services.AddTransient<IProductRepo, ProductRepo>();
-            services.AddSingleton<IMessageBusClient, MessageBusClient>();
+            services.AddSingleton<IMessageBusClient, MessageBusClientProduct>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(c =>

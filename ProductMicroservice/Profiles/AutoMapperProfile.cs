@@ -17,6 +17,8 @@ namespace ProductMicroservice.Profiles
                 .ReverseMap();
             CreateMap<PostProductDto, Product>()
                 .ReverseMap();
+            CreateMap<InventoryPostProductDto, Product>()
+               .ReverseMap();
 
 
         }

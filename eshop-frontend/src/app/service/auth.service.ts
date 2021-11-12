@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { LoggedUser } from '../users/logged-user.module';
+import { LoggedUser } from '../users/models/logged-user.module';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
@@ -26,6 +26,7 @@ export class AuthService {
   login(user : any){
       return this.http.post<any>(this.usersUrl+"/authenticate",user).pipe(map(
         user=>{
+       
           localStorage.setItem('currentUser',JSON.stringify(user));
           localStorage.setItem('token',user.token);
           this.currentUserSubject.next((<LoggedUser>user));

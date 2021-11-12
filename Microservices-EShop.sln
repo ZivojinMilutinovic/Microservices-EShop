@@ -7,11 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserMicroservice", "UserMic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmazonS3Microservice", "AmazonS3Microservice\AmazonS3Microservice.csproj", "{03878440-2EC2-4792-8F46-23E5EAF5B2B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductMicroservice", "ProductMicroservice\ProductMicroservice.csproj", "{162BAFB4-B071-4029-BD16-176BC8FC3C0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductMicroservice", "ProductMicroservice\ProductMicroservice.csproj", "{162BAFB4-B071-4029-BD16-176BC8FC3C0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryMicroservice", "InventoryMicroservice\InventoryMicroservice.csproj", "{05BB4E04-2026-4A77-A68F-59B101D2B30E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryMicroservice", "InventoryMicroservice\InventoryMicroservice.csproj", "{05BB4E04-2026-4A77-A68F-59B101D2B30E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingMicroservice", "ShippingMicroservice\ShippingMicroservice.csproj", "{2CFC0689-4B41-4657-9BCC-2BB80532A734}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShippingMicroservice", "ShippingMicroservice\ShippingMicroservice.csproj", "{2CFC0689-4B41-4657-9BCC-2BB80532A734}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailMicroservice", "EmailMicroservice\EmailMicroservice.csproj", "{D6DD8904-344C-4EC0-BB32-80B14BD05452}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCartMicroservice", "ShoppingCartMicroservice\ShoppingCartMicroservice.csproj", "{2E8674EA-AFE2-451A-8177-9D24839B4AB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{2CFC0689-4B41-4657-9BCC-2BB80532A734}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CFC0689-4B41-4657-9BCC-2BB80532A734}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CFC0689-4B41-4657-9BCC-2BB80532A734}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DD8904-344C-4EC0-BB32-80B14BD05452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DD8904-344C-4EC0-BB32-80B14BD05452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DD8904-344C-4EC0-BB32-80B14BD05452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DD8904-344C-4EC0-BB32-80B14BD05452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E8674EA-AFE2-451A-8177-9D24839B4AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8674EA-AFE2-451A-8177-9D24839B4AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8674EA-AFE2-451A-8177-9D24839B4AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8674EA-AFE2-451A-8177-9D24839B4AB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

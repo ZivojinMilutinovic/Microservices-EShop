@@ -1,0 +1,91 @@
+<main>
+    
+   
+    <div class="main" >
+      <div class="img-kontejner">
+      <section class="module bg-dark-60 shop-page-header image" >
+      </section>
+      <div class="col-sm-6 col-sm-offset-3 img-text"> 
+        <h2 class="module-title font-alt">Shop Products</h2>
+        <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+      </div>
+    </div>
+      <section class="module-small">
+        <div class="container">
+          <form class="row">
+            <div class="col-sm-4 mb-sm-20">
+              <select #selectSorting class="form-control">
+                <option selected="selected">Default Sorting</option>
+               
+                <option>Average Price</option>
+                <option>High Price</option>
+                <option>Low Price</option>
+              </select>
+            </div>
+            <div class="col-sm-2 mb-sm-20">
+              <select #selectCollection class="form-control">
+                <option selected>All</option>
+                <option *ngFor="let coll of collection;" >
+                  {{coll}}
+                </option>
+              </select>
+            </div>
+            <div class="col-sm-3 mb-sm-20">
+              <select #selectClothingType class="form-control">
+                <option  selected="selected">All</option>
+                <option *ngFor="let clothingType of clothingTypes">
+                  {{clothingType}}
+                </option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <button (click)="applyFilters(selectClothingType.value,selectCollection.value,selectSorting.value)" class="btn btn-block btn-round btn-g" type="submit">Apply</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <hr class="divider-w">
+      <section class="module-small">
+        <div class="container">
+          <div class="row multi-columns-row">
+            <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let product of productsForShowing;index as i">
+                <div class="shop-item">
+                    <div class="shop-item-image"><img [src]="imageUrls.get(product.id)" alt="Accessories Pack"/>
+                      <div class="shop-item-detail"><a data-toggle="modal" data-target="#modal" (click)="addProductToCart(product)" class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
+                    </div>
+                    <h4 class="shop-item-title font-alt"><a href="#">{{product.clothingType}}</a></h4>{{product.price}}$
+                  </div>
+            </div>
+           
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="d-flex justify-content-center mt-5 mb-3">
+                <app-pagination (changePage)="setPageItems($event)" [items]="filteredProducts"></app-pagination>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+  <div  class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel"> Product successfully addded to cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue shopping</button>
+      </div>
+      <div class="modal-footer d-flex justify-content-start">
+        <a data-dismiss="modal"  class="btn btn-primary" routerLink="/shopping-cart">Go to shopping cart</a>
+      </div>
+    </div>
+  </div>
+</div>

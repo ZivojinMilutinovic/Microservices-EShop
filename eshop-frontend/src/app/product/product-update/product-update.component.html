@@ -1,0 +1,54 @@
+<div class="container">
+    <h1 class="text-center mt-2">Create product</h1>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="productNumber">Product number</label>
+        <input formControlName="productNumber" type="text" class="form-control" id="productNumber" value={{product.productNumber}}   >
+  
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input formControlName="price" type="number"  class="form-control" id="price" value={{product.price}}>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text"  formControlName="description"  class="form-control" id="description" value={{product.description}}>
+      </div>
+      <div class="form-group ">
+        <label for="collection">Collection</label>
+        <select formControlName="collection"  id="collection" class="form-control">
+          <option [selected]="product.collection==coll" *ngFor="let coll of collection">
+            {{coll}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group ">
+        <label for="clothingType">Type of clothing</label>
+        <select formControlName="clothingType"  id="clothingType" class="form-control">
+          <option [selected]="product.clothingType==clothingType" *ngFor="let clothingType of clothingTypes">
+            {{clothingType}}
+          </option>
+        </select>
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-6">
+            <div class="card w-75 "  >
+                <img class="card-img-top" style="height: 300px; " [src]="productPictureUrl" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Product photo</h5>
+                  <app-upload [uploadMessage]="'Upload photo for product'" (onUploadFinished)="uploadProductFinishedPhoto($event)"></app-upload>
+                </div>
+              </div>
+      
+        </div>
+      </div>
+   
+
+      <div class="col-2 p-0"><button type="submit" class=" w-100  btn btn-primary">   Submit   </button></div>
+      <div class="text-danger mt-3 mb-2">{{errorMessage}}</div>
+    </form>
+  
+  
+  </div>
+  

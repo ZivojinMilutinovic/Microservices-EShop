@@ -7,20 +7,41 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   rules:
-    - host: acme.com
+    - host: webshop.com
       http:
         paths:
-          - path: /api/platforms
+          - path: /api/users
             pathType: Prefix
             backend:
               service:
-                name: platforms-clusterip-srv
+                name: users-clusterip-srv
                 port:
                   number: 80
-          - path: /api/c/platforms
+          - path: /api/amazons3
             pathType: Prefix
             backend:
               service:
-                name: commands-clusterip-srv
+                name: amazons3-clusterip-srv
                 port:
                   number: 80
+          - path: /api/product
+            pathType: Prefix
+            backend:
+              service:
+                name: product-clusterip-srv
+                port:
+                  number: 80
+          - path: /api/shoppingcart
+            pathType: Prefix
+            backend:
+              service:
+                name: shoppingcart-clusterip-srv
+                port:
+                  number: 80             
+          - path: /api/shipping
+            pathType: Prefix
+            backend:
+              service:
+                name: shipping-clusterip-srv
+                port:
+                  number: 80   

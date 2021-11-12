@@ -1,0 +1,20 @@
+.img-kontejner{
+    position: relative;
+    text-align: center;
+}
+
+.image{
+    content: url(../../assets/img/women-background.jpg);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+   max-height: 500px;
+    position: relative;
+    z-index: -1;
+}
+.img-text{
+    position: absolute;
+    z-index: 5;
+    top: 8px;
+    left: 16px;
+}

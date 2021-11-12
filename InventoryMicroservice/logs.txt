@@ -1,0 +1,137 @@
+2021-10-14 21:03:25.551 +02:00 [INF] MessageBusSubscriber--> IntializeRabbitMq started
+2021-10-14 21:03:25.660 +02:00 [INF] MessageBusSubscriber --> Listening on the Message Bus...
+2021-10-14 21:03:25.671 +02:00 [INF] MessageBusSubscriber --> Finishing task execution
+2021-10-14 21:03:26.183 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-14 21:03:26.687 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Inventory] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2021-10-14 21:03:26.720 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-14 21:03:26.728 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-14 21:03:26.731 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-14 21:03:26.733 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-14 21:03:26.753 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-14 21:03:26.767 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-14 21:03:26.795 +02:00 [INF] Now listening on: http://localhost:5012
+2021-10-14 21:03:26.795 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-14 21:03:26.795 +02:00 [INF] Hosting environment: Development
+2021-10-14 21:03:26.795 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\InventoryMicroservice
+2021-10-14 21:04:06.846 +02:00 [INF] MessageBusSubscriber --> Event received
+2021-10-14 21:04:06.847 +02:00 [INF] EventProcessor--> Starting Event processing
+2021-10-14 21:04:06.853 +02:00 [INF] EventProcessor--> Create Product event detected
+2021-10-14 21:04:06.853 +02:00 [INF] EventProcessor--> Create Product method started
+2021-10-14 21:04:06.856 +02:00 [INF] InventoryRepo-->CreatingProductForInvettory  method called
+2021-10-14 21:04:07.028 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Double), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([ClothingType], [Collection], [Description], [InventoryId], [Price], [ProductNumber])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Product]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-14 21:04:07.068 +02:00 [INF] InventoryRepo-->CreatingProductForInvettory  method finished
+2021-10-14 21:04:07.068 +02:00 [INF] EventProcessor--> Creating product method finished
+2021-10-14 21:21:31.347 +02:00 [INF] MessageBusSubscriber --> Event received
+2021-10-14 21:21:31.350 +02:00 [INF] EventProcessor--> Starting Event processing
+2021-10-14 21:21:31.353 +02:00 [INF] EventProcessor--> Create Product event detected
+2021-10-14 21:21:31.353 +02:00 [INF] EventProcessor--> Create Product method started
+2021-10-14 21:21:31.357 +02:00 [INF] InventoryRepo-->CreatingProductForInvettory  method called
+2021-10-14 21:21:31.474 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Double), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([ClothingType], [Collection], [Description], [InventoryId], [Price], [ProductNumber])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Product]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-14 21:21:31.480 +02:00 [INF] InventoryRepo-->CreatingProductForInvettory  method finished
+2021-10-14 21:21:31.480 +02:00 [INF] EventProcessor--> Creating product method finished
+2021-10-14 23:28:01.137 +02:00 [INF] MessageBusSubscriber --> Event received
+2021-10-14 23:28:01.142 +02:00 [INF] EventProcessor--> Starting Event processing
+2021-10-14 23:28:01.158 +02:00 [INF] EventProcessor--> Event could not be determined
+2021-10-16 01:47:56.323 +02:00 [INF] MessageBusSubscriber --> Connection shutdown
+2021-10-16 02:22:50.261 +02:00 [INF] MessageBusSubscriber --> Connection shutdown
+2021-10-16 09:58:20.294 +02:00 [INF] MessageBusSubscriber--> IntializeRabbitMq started
+2021-10-16 09:58:20.371 +02:00 [INF] MessageBusSubscriber --> Listening on the Message Bus...
+2021-10-16 09:58:20.379 +02:00 [INF] MessageBusSubscriber --> Finishing task execution
+2021-10-16 09:58:20.836 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-16 09:58:21.305 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Inventory] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2021-10-16 09:58:21.332 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 09:58:21.340 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 09:58:21.343 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 09:58:21.345 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 09:58:21.363 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-16 09:58:21.378 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-16 09:58:21.412 +02:00 [INF] Now listening on: http://localhost:5012
+2021-10-16 09:58:21.412 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-16 09:58:21.412 +02:00 [INF] Hosting environment: Development
+2021-10-16 09:58:21.412 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\InventoryMicroservice
+2021-10-16 11:39:21.460 +02:00 [INF] MessageBusSubscriber--> IntializeRabbitMq started
+2021-10-16 11:39:21.548 +02:00 [INF] MessageBusSubscriber --> Listening on the Message Bus...
+2021-10-16 11:39:21.557 +02:00 [INF] MessageBusSubscriber --> Finishing task execution
+2021-10-16 11:39:22.067 +02:00 [INF] Entity Framework Core 5.0.10 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2021-10-16 11:39:22.459 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Inventory] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2021-10-16 11:39:22.478 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 11:39:22.483 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 11:39:22.485 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2021-10-16 11:39:22.487 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-10-16 11:39:22.498 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-10-16 11:39:22.507 +02:00 [INF] No migrations were applied. The database is already up to date.
+2021-10-16 11:39:22.523 +02:00 [INF] Now listening on: http://localhost:5012
+2021-10-16 11:39:22.523 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-16 11:39:22.523 +02:00 [INF] Hosting environment: Development
+2021-10-16 11:39:22.523 +02:00 [INF] Content root path: C:\Users\zivoj\Desktop\Zivojin\Microservices-EShop\InventoryMicroservice
+2021-10-16 11:59:36.981 +02:00 [INF] MessageBusSubscriber --> Event received
+2021-10-16 11:59:36.991 +02:00 [INF] EventProcessor--> Starting Event processing
+2021-10-16 11:59:37.049 +02:00 [INF] EventProcessor--> Event could not be determined
+2021-10-16 14:29:37.729 +02:00 [INF] MessageBusSubscriber --> Event received
+2021-10-16 14:29:37.736 +02:00 [INF] EventProcessor--> Starting Event processing
+2021-10-16 14:29:37.747 +02:00 [INF] EventProcessor--> Create Product event detected
+2021-10-16 14:29:37.755 +02:00 [INF] EventProcessor--> Create Product method started
+2021-10-16 14:29:37.799 +02:00 [INF] InventoryRepo-->CreatingProductForInvettory  method called
+2021-10-16 14:29:38.225 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = Double), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Product] ([ClothingType], [Collection], [Description], [InventoryId], [Price], [ProductNumber])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Product]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-10-16 14:29:38.259 +02:00 [INF] InventoryRepo-->CreatingProductForInvettory  method finished
+2021-10-16 14:29:38.259 +02:00 [INF] EventProcessor--> Creating product method finished
+2021-10-16 14:33:54.027 +02:00 [INF] Application is shutting down...
+2021-10-16 14:33:54.124 +02:00 [INF] MessageBusSubscriber --> Connection shutdown
+2021-10-16 14:33:54.127 +02:00 [INF] MessageBusSubscriber --> Disposing resources

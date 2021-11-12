@@ -78,105 +78,26 @@
               </div>
           </div>
           <div class="col-lg-8 offset-lg-1">
-              <div class="filter-control">
-                  <ul>
-                      <li class="active">Clothings</li>
-                      <li>HandBag</li>
-                      <li>Shoes</li>
-                      <li>Accessories</li>
-                  </ul>
-              </div>
-              <div class="product-slider owl-carousel">
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/women-1.jpg" alt="" />
-                          <div class="sale">Sale</div>
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Coat</div>
-                          <a href="#">
-                              <h5>Pure Pineapple</h5>
-                          </a>
-                          <div class="product-price">
-                              $14.00
-                              <span>$35.00</span>
-                          </div>
+            <div  id="carouselFemale" class="carousel slide" data-ride="carousel">
+        
+                <div class="carousel-inner">
+                  <div class="carousel-item active" [ngClass]="{'active': i === 0}" *ngFor="let product of femaleProducts;index as i">
+                    <img class="d-block w-100" [src]="imageUrls.get(product.id)" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{product.clothingType}}</h5>
+                        <p>{{product.price}}$</p>
                       </div>
                   </div>
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/women-2.jpg" alt="" />
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Shoes</div>
-                          <a href="#">
-                              <h5>Guangzhou sweater</h5>
-                          </a>
-                          <div class="product-price">
-                              $13.00
-                          </div>
-                      </div>
-                  </div>
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/women-3.jpg" alt="" />
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Towel</div>
-                          <a href="#">
-                              <h5>Pure Pineapple</h5>
-                          </a>
-                          <div class="product-price">
-                              $34.00
-                          </div>
-                      </div>
-                  </div>
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/women-4.jpg" alt="" />
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Towel</div>
-                          <a href="#">
-                              <h5>Converse Shoes</h5>
-                          </a>
-                          <div class="product-price">
-                              $34.00
-                          </div>
-                      </div>
-                  </div>
+            
+                </div>
+                <a class="carousel-control-prev" href="#carouselFemale" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselFemale" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
           </div>
       </div>
@@ -221,107 +142,33 @@
 <section class="man-banner spad">
   <div class="container-fluid">
       <div class="row">
-          <div class="col-lg-8">
-              <div class="filter-control">
-                  <ul>
-                      <li class="active">Clothings</li>
-                      <li>HandBag</li>
-                      <li>Shoes</li>
-                      <li>Accessories</li>
-                  </ul>
+          <div class="col-lg-8 d-flex flex-column">
+            <div  id="carouselMale" class="carousel slide" data-ride="carousel">
+        
+                <div class="carousel-inner">
+                  <div class="carousel-item active" [ngClass]="{'active': i === 0}" *ngFor="let product of maleProducts;index as i">
+                    <img class="d-block w-100" [src]="imageUrls.get(product.id)" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block text-white ">
+                        <h5>{{product.clothingType}}</h5>
+                        <p>{{product.price}}$</p>
+                      </div>
+                  </div>
+            
+                </div>
+                <a class="carousel-control-prev" href="#carouselMale" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselMale" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <div class="product-slider owl-carousel">
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/man-1.jpg" alt="" />
-                          <div class="sale">Sale</div>
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Coat</div>
-                          <a href="#">
-                              <h5>Pure Pineapple</h5>
-                          </a>
-                          <div class="product-price">
-                              $14.00
-                              <span>$35.00</span>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/man-2.jpg" alt="" />
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Shoes</div>
-                          <a href="#">
-                              <h5>Guangzhou sweater</h5>
-                          </a>
-                          <div class="product-price">
-                              $13.00
-                          </div>
-                      </div>
-                  </div>
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/man-3.jpg" alt="" />
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Towel</div>
-                          <a href="#">
-                              <h5>Pure Pineapple</h5>
-                          </a>
-                          <div class="product-price">
-                              $34.00
-                          </div>
-                      </div>
-                  </div>
-                  <div class="product-item">
-                      <div class="pi-pic">
-                          <img src="assets/img/man-4.jpg" alt="" />
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Towel</div>
-                          <a href="#">
-                              <h5>Converse Shoes</h5>
-                          </a>
-                          <div class="product-price">
-                              $34.00
-                          </div>
-                      </div>
-                  </div>
-              </div>
+             
+
+         
+          
+          
           </div>
           <div class="col-lg-3 offset-lg-1">
               <div class="product-large set-bg m-large" data-setbg="assets/img/man-large.jpg">

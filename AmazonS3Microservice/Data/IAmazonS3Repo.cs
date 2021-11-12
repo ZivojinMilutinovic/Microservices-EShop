@@ -1,4 +1,5 @@
 ﻿using AmazonS3Microservice.Dtos;
+using AmazonS3Microservice.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -15,5 +16,6 @@ namespace AmazonS3Microservice.Data
         Task<bool> uploadMultipleFilesAsync(string bucketName, List<IFormFile> files, string productId);
         Task<Stream> GetObjectFromS3Async(string bucketName, string FileName);
         Task<bool> deleteFileAsync(string bucketName, int productId);
+        Task<IEnumerable<ProductImage>> GetPicturesForProduct(int id);
     }
 }

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amazons3-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amazons3microservice
+  template:
+    metadata:
+      labels:
+        app: amazons3microservice
+    spec:
+      containers:
+        - name: amazons3microservice
+          image: zivojinmilutinovic1998/amzons3microservice
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: amazons3-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: amazons3microservice
+  ports:
+  - name: amazons3microservice
+    protocol: TCP
+    port: 80
+    targetPort: 80

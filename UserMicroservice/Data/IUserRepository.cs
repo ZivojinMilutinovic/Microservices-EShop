@@ -11,7 +11,7 @@ namespace UserMicroservice.Data
     {
          Task<IEnumerable<GetUserDTO>> GetAllUsers();
 
-         Task<User> GetUserDetailsById(int userId);
+         Task<GetUserDTO> GetUserDetailsById(int userId);
 
          Task<User> AddUser(CreateUserDTO userDTO);
 

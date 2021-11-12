@@ -1,4 +1,5 @@
 ﻿using ProductMicroservice.Dtos;
+using ProductMicroservice.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,6 @@ namespace ProductMicroservice.AsyncDataService
 {
     public interface IMessageBusClient
     {
-        void PublishNewProduct(GetProductDto getProductDto);
+        void PublishNewProduct(InventoryPostProductDto product);
     }
 }

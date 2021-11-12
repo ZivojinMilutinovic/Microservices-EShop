@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usermicroservice
+  template:
+    metadata:
+      labels:
+        app: usermicroservice
+    spec:
+      containers:
+        - name: usermicroservice
+          image: zivojinmilutinovic1998/usermicroservice
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: usermicroservice
+  ports:
+  - name: usermicroservice
+    protocol: TCP
+    port: 80
+    targetPort: 80

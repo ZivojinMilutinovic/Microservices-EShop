@@ -1,0 +1,68 @@
+
+<h1 class="text-center mt-3">All users</h1>
+<div class="container mt-5">
+
+<div class="container mt-5">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Email</th>
+          <th scope="col">Username</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersForShowing;index as i;">
+            <th scope="row">{{i+1}}</th>
+            <th>{{user.firstName}}</th>
+            <th>{{user.lastName}}</th>
+            <th>{{user.address}}</th>
+            <th>{{user.email}}</th>
+            <th>{{user.username}}</th>
+            <th><a [routerLink]="['/user-update',user.userID]" class="btn btn-primary">Update</a></th>
+            <th><button class="btn btn-danger" type="button"  data-toggle="modal" data-target="#modal"
+              (click)="assignDeleteUser(user)" >Delete</button></th>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row justify-content-center">
+
+      <div class="col-6"><a routerLink="/user-create" class="btn btn-secondary btn-lg btn-block">Create new user</a></div>
+  </div>
+
+
+</div>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Delete user</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete {{userDelete.firstName}} {{userDelete.lastName}}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="deleteUser()" type="button" class="btn btn-danger">Delete User</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5 mb-3">
+    <app-pagination (changePage)="setPageItems($event)" [items]="users"></app-pagination>
+</div>
+

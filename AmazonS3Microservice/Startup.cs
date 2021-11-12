@@ -1,3 +1,4 @@
+using Amazon.Extensions.NETCore.Setup;
 using Amazon.Runtime;
 using Amazon.S3;
 using AmazonS3Microservice.Data;
@@ -20,17 +21,22 @@ namespace AmazonS3Microservice
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
 
         public IConfiguration Configuration { get; }
 
+      
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            
+        }
+
+       
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -39,7 +45,14 @@ namespace AmazonS3Microservice
             services.AddDbContextPool<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("S3Conn")));
             services.AddTransient<IAmazonS3Repo, AmazonS3Repo>();
 
+            services.AddDefaultAWSOptions(new AWSOptions
+            {
+                Credentials = new BasicAWSCredentials("AKIAVPP2S62KJMSUVAOO", "oEdQfwiyPeD2OJ6FtvBEPD0jGu99eCD84l184ow/"),
+                Region = Amazon.RegionEndpoint.EUCentral1
+            });
+
             services.AddAWSService<IAmazonS3>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

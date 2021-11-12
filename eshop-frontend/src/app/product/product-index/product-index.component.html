@@ -1,0 +1,63 @@
+
+<h1 class="text-center mt-2 mb-2">Manage products</h1>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table mt-5">
+        <thead class="thead-dark">
+            <tr>
+          
+            <th scope="col">Product number</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Collection</th>
+            <th scope="col">Clothing type</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr (click)="goToProductDetail($event,product.id)" *ngFor="let product of productsForShowing;index as i;">
+               
+                <th>{{product.productNumber}}</th>
+                <th>{{product.price}}</th>
+                <th>{{product.description}}</th>
+                <th>{{product.collection}}</th>
+                <th>{{product.clothingType}}</th>
+                
+                <th><a [routerLink]="['/product-update',product.id]" class="btn btn-primary">Update</a></th>
+                <th><button class="btn btn-danger"  data-toggle="modal" data-target="#modal"
+                (click)="assignDeleteProduct(product)" >Delete</button></th>
+            </tr>
+
+        </tbody>
+        </table>
+    </div>
+    <div class="row justify-content-center">
+
+        <div class="col-6"><a routerLink="/product-create" class="btn btn-secondary btn-lg btn-block">Create product</a></div>
+    </div>
+  
+</div>
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Delete movie</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete {{productForDelete.clothingType}} from collection {{productForDelete.collection}}?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button (click)="deleteProduct()" type="button" class="btn btn-danger">Delete product</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="d-flex justify-content-center mt-5 mb-3">
+    <app-pagination (changePage)="setPageItems($event)" [items]="products"></app-pagination>
+  </div>
